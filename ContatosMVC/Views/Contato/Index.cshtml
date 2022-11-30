@@ -1,17 +1,40 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@model List<ContatoModel>
+
 @{
     ViewData["Title"] = "Listagem de Contatos";
 }
 
-<h1>Listagem de Contatos</h1>
+<!--<h1>Listagem de Contatos</h1>
 
 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
     <a class="btn btn-primary" asp-controller="Contato" asp-action="Criar" role="button">Adicionar novo contato</a>
 </div>
 
-<table class="table">
+<table class="table">-->
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn-primary" asp-controller="Contato" asp-action="Criar" role="button">Adicionar novo contato</a>
+</div>
+
+<br />
+
+<h1 class="display-4">Listagem de contatos</h1>
+<div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-success btn-sm close-alert" aria-label="Close">X</button>
+        A simple success alert—check it out!
+    </div>
+
+    <div class="alert alert-danger" role="alert">
+
+        <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+        A simple danger alert—check it out!
+    </div>
+
+<table id="table-contatos" class="display" style="width:100%">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -24,6 +47,27 @@
         </tr>
     </thead>
     <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (ContatoModel contato in Model)
+            {
+                <tr>
+                    <th scope="row">@contato.Id</th>
+                    <td>@contato.Nome</td>
+                    <td>@contato.Email</td>
+                    <td>@contato.Celular</td>
+                    <td>
+                        <div class="btn-group" role="button">
+                            <a role="button" class="btn btn-primary" asp-controller="Contato" asp-route-id="@contato.Id" asp-action="Editar">Editar</a>
+                            <a role="button" class="btn btn-danger" asp-controller="Contato" asp-route-id="@contato.Id" asp-action="ApagarConfirmacao">Apagar</a>
+
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        }
+        <!--
         <tr>
             <th scope="row">1</th>
             <td>Mark</td>
@@ -46,7 +90,7 @@
                 </div>
             </td>
         </tr>
-
+        -->
     </tbody>
 </table>
 
