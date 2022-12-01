@@ -1,5 +1,7 @@
-﻿using ContatosMVC.Data;
+﻿
+using ContatosMVC.Data;
 using ContatosMVC.Models;
+
 
 namespace ContatosMVC.Repositorio
 {
@@ -7,19 +9,26 @@ namespace ContatosMVC.Repositorio
     {
 
         private readonly BancoContext _bancoContext;
+        public ContatoRepositorio(BancoContext bancoContext)
+        {
+            _bancoContext = bancoContext;
+        }
+
+
+        public bool Apagar(int id)
+        {
+            ContatoModel contatoDb = ListarPorId(id);
+            if (contatoDb == null) throw new System.Exception("Houve um erro de Exclusão");
+            _bancoContext.Contatos.Remove(contatoDb);
+            _bancoContext.SaveChanges();
+            return true;
+        }
 
         public ContatoModel Adicionar(ContatoModel contato)
         {
-            ContatoModel contatoDb = ListarPorId(contato.Id);
-            if (contatoDb == null) throw new System.Exception("Houve um erro de atualização");
-
-            contatoDb.Nome = contato.Nome;
-            contatoDb.Email = contato.Email;
-            contatoDb.Celular = contato.Celular;
-
-            _bancoContext.Contatos.Update(contatoDb);
+            _bancoContext.Contatos.Add(contato);
             _bancoContext.SaveChanges();
-            return contatoDb;
+            return contato;
         }
 
         public List<ContatoModel> BuscarTodos()
@@ -32,28 +41,22 @@ namespace ContatosMVC.Repositorio
             return _bancoContext.Contatos.FirstOrDefault(x => x.Id == id);
         }
 
-        //ContatoModel IContatoRepositorio.Adicionar(ContatoModel contato)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
-        ContatoModel IContatoRepositorio.Atualizar(ContatoModel contato)
+        public ContatoModel Atualizar(ContatoModel contato)
         {
-            throw new NotImplementedException();
-        }
+            ContatoModel contatoDb = ListarPorId(contato.Id);
+            if (contatoDb == null) throw new System.Exception("Houve um erro de atualização");
 
-        List<ContatoModel> IContatoRepositorio.BuscarTodos()
-        {
-            throw new NotImplementedException();
-        }
+            contatoDb.Nome = contato.Nome;
+            contatoDb.Email = contato.Email;
+            contatoDb.Celular = contato.Celular;
 
-        public bool Apagar(int id)
-        {
-            ContatoModel contatoDb = ListarPorId(id);
-            if (contatoDb == null) throw new System.Exception("Houve um erro de Exclusão");
-            _bancoContext.Contatos.Remove(contatoDb);
+            _bancoContext.Contatos.Update(contatoDb);
             _bancoContext.SaveChanges();
-            return true;
+            return contatoDb;
         }
+    
+
+
     }
 }

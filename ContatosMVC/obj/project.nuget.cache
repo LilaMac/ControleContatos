@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "g/rDBQ0n5goomNrg0t+VCikRtmd3mqsrPwwE7aPzuVr5RqWbxiE3Aby4VwyvKUJbwtlPIPBS9mlxEf/nnSTCCg==",
+  "dgSpecHash": "sVva93p4Ui6GPIe5xXArcOsGjsC7h6q1Jjrf4B3IaX0BmrjOysRfFMdvFqkXxF9JmBkYxluNjgu/Z11h8UfNTQ==",
   "success": true,
   "projectFilePath": "D:\\impacta\\AspNet\\My\\ContatosMVC\\ContatosMVC\\ContatosMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\LM\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\LM\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\LM\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\LM\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

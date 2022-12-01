@@ -1,0 +1,9 @@
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.csproj.AssemblyReference.cache
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.GeneratedMSBuildEditorConfig.editorconfig
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.AssemblyInfoInputs.cache
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.AssemblyInfo.cs
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.csproj.CoreCompileInputs.cache
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.MvcApplicationPartsAssemblyInfo.cs
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.MvcApplicationPartsAssemblyInfo.cache
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.RazorAssemblyInfo.cache
+D:\impacta\AspNet\My\ContatosMVC\ContatosMVC\obj\Release\net6.0\ContatosMVC.RazorAssemblyInfo.cs

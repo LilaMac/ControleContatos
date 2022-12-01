@@ -7,6 +7,10 @@ $('.close-alert').click(function () {
     $('.alert').hide('hide');
 });
 
+$(document).ready(function () {
+    $('#table-contatos').DataTable();
+});
+
 
 $('#table-contatos').DataTable({
     "ordering": true,
